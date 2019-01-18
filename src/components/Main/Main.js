@@ -2,7 +2,6 @@ import React from 'react';
 import './Main.scss';
 import connect from "react-redux/es/connect/connect";
 import {getVideos} from "../../store/actions/searchVideoAction";
-import Header from '../Header/Header'
 
 // Tutaj beda znajdowały sie wszystko komponenty z nawigacja, App bedzie tylko wrapował Main
 function Main(props) {
@@ -10,6 +9,7 @@ function Main(props) {
         <div className="Main">
             <Header />
             <h1>Main component</h1>
+                <VideoMain />
                 <button onClick={() => props.getVideos('Tibia')}>Click to test API</button>
         </div>
     );
