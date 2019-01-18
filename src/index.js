@@ -9,10 +9,12 @@ import thunk from 'redux-thunk';
 import Provider from 'react-redux/es/components/Provider';
 import createSagaMiddleware from 'redux-saga'
 import {rootReducer} from "./store/reducers/rootReducer";
+import mySaga from './store/sagas/index'
 
 const sagaMiddleware = createSagaMiddleware()
 
 const store = createStore(rootReducer, {}, composeWithDevTools(applyMiddleware(thunk, sagaMiddleware)));
+sagaMiddleware.run(mySaga);
 
 ReactDOM.render(
     <Provider store={store}>

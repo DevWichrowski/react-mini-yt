@@ -12,8 +12,8 @@ export function searchVideoReducer(state = initialState, action) {
         case SearchVideoAction.FETCH_REQUEST: {
             return {...state, loading: true, error: null}
         }
-        case SearchVideoAction.FETCH_SUCCESS: {
-            return {...state, loading: false, personalInfoArr: action.payload}
+        case SearchVideoAction.FETCH_VIDEOS_SUCCESS: {
+            return {...state, loading: false, videos: action.payload}
         }
         default: {
             return state;
