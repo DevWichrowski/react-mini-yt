@@ -15,6 +15,7 @@ const styles = theme => ({
     },
     inputbase: {
         borderStyle: "ridge",
+        marginLeft: 370,
         width: "40%", [theme.breakpoints.down("md")]: {
             width: "60%"
         },
@@ -28,7 +29,9 @@ const styles = theme => ({
     },
     button: {
         marginLeft: "-64px",
-
+    },
+    logo: {
+        marginLeft: -450
     }
 })
 
@@ -40,7 +43,7 @@ class Header extends React.Component {
             <Grid container className={classes.root} >
                 <Grid xs={12}>
                     <Grid container justify="center" className={classes.padding}>
-                        <img src={ytlogo} alt="YouTube" />
+                        <img src={ytlogo}  alt="YouTube" className={classes.logo} />
                         <InputBase className={classes.inputbase}
                             placeholder="Szukaj..."
 
