@@ -1,7 +1,5 @@
 import React from 'react';
 import './Main.scss';
-import connect from "react-redux/es/connect/connect";
-import {getVideos} from "../../store/actions/searchVideoAction";
 import VideoMain from "../VideoMain/VideoMain";
 import Header from '../Header/Header'
 

@@ -30,7 +30,7 @@ const styles = theme => ({
         marginLeft: "-64px",
 
     }
-})
+});
 
 class Header extends React.Component {
     render() {
