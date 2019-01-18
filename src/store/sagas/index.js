@@ -1,4 +1,4 @@
-import { takeLatest } from 'redux-saga/effects';
+import {takeLatest} from 'redux-saga/effects';
 import getVideosApi from "./getVideosApi";
 
 function* actionWatcher() {
@@ -6,5 +6,5 @@ function* actionWatcher() {
 }
 
 export default function* rootSaga() {
-    yield [ actionWatcher() ];
+    yield [actionWatcher()];
 }
