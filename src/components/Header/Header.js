@@ -33,7 +33,7 @@ const styles = theme => ({
     logo: {
         marginLeft: -450
     }
-})
+});
 
 class Header extends React.Component {
     render() {
