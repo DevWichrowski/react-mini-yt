@@ -9,8 +9,8 @@ function Main(props) {
     return (
         <div className="Main">
             <Header/>
-            <h1>Main component</h1>
-            <VideoMain/>
+            <h1>Main component</h1>            
+            <VideoMain/>      
         </div>
     );
 }
