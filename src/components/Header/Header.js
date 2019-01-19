@@ -7,7 +7,8 @@ import logo from '../../assets/logo.png'
 import { connect } from 'react-redux'
 import { getVideos, saveMoveTitle } from '../../store/actions/searchVideoAction'
 
-class Header extends Component {
+
+class Header extends React.Component {ł
     constructor(props) {
         super(props)
 
