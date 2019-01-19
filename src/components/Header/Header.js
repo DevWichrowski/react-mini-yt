@@ -34,7 +34,6 @@ class Header extends React.Component {ł
                                 <div className="header-input">
                                     <input
                                         onChange={this.saveTitleInState}
-                                        className="input"
                                         placeholder="Szukaj..."
                                         onKeyPress={event => {
                                             if (event.key === 'Enter') {
