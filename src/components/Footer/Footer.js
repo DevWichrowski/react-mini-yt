@@ -4,53 +4,42 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { Grid, Row, Col, Button } from 'react-bootstrap'
 import StickyFooter from 'react-sticky-footer';
+import { faCopyright } from '@fortawesome/free-solid-svg-icons'
 
 class Footer extends React.Component {
     constructor() {
         super()
         this.state = {
            clicked: false,
-           style: 'small'
+           style: 'small',
+           contentSyle: 'single',
+           creatorsStyle: 'hidden'
         }
     }
 
     getStyle = () => {
         if (!this.state.clicked) {
-            this.setState({ style: 'big', clicked: true });
+            this.setState({ style: 'big', clicked: true, contentSyle: 'double', creatorsStyle: 'showed' });
         } else {
-            this.setState({ style: 'small', clicked: false });
+            this.setState({ style: 'small', clicked: false, contentSyle: 'single', creatorsStyle: 'hidden' });
         }
     }
 
     render() {
         return (
-            <div className={this.state.style}  onClick={() => {
+            <div className={this.state.style}>
+              <button className="footer-button"> <FontAwesomeIcon icon={faCopyright} /> </button>
+              <div className="footer-content">
+              <div className={this.state.contentSyle} onClick={() => {
                 this.getStyle()
             }}>
-                {/* <StickyFooter bottomThreshold={50000}>
-                <Grid>
-                    <Row>
-                        <Col xs={6} sm={6} md={6} lg={6}>
-                            <a href=" " ><FontAwesomeIcon icon={faGithub} /> ?????????? </a>
-                            <a href=" " ><FontAwesomeIcon icon={faLinkedin} /> ????????? </a>
-                        </Col>
-                        <Col xs={6} sm={6} md={6} lg={6}>
-                            <a href=" " ><FontAwesomeIcon icon={faGithub} /> ?????????? </a>
-                            <a href=" " ><FontAwesomeIcon icon={faLinkedin} /> ????????? </a>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={6} sm={6} md={6} lg={6}>
-                            <a href=" " ><FontAwesomeIcon icon={faGithub} /> ?????????? </a>
-                            <a href=" " ><FontAwesomeIcon icon={faLinkedin} /> ????????? </a>
-                        </Col>
-                        <Col xs={6} sm={6} md={6} lg={6}>
-                            <a href=" " ><FontAwesomeIcon icon={faGithub} /> ?????????? </a>
-                            <a href=" " ><FontAwesomeIcon icon={faLinkedin} /> ????????? </a>
-                        </Col>
-                    </Row>
-                </Grid>
-                </StickyFooter> */}
+              Made by AnticaTeam, all rights reserved. {new Date().getFullYear()} {this.state.style === 'small' ? <div class="more-info">Click to see more info.</div> : null}
+              </div>
+              <div className={this.state.creatorsStyle}>
+                <div className="creator"><FontAwesomeIcon icon={faGithub} /><div className="creator-link"><a href="https://github.com/DevWichrowski">https://github.com/DevWichrowski</a></div></div>
+                <div className="creator"><FontAwesomeIcon icon={faGithub} /><div className="creator-link"><a href="https://github.com/RadekGluchowski">https://github.com/RadekGluchowski</a></div></div>
+              </div>
+              </div>
             </div>
         )
             }

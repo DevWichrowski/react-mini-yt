@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import { getVideos, saveVideoTitle } from '../../store/actions/searchVideoAction'
 
 
-class Header extends React.Component {ł
+class Header extends React.Component {
     constructor(props) {
         super(props)
 
