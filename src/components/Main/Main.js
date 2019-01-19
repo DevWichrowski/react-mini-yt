@@ -11,9 +11,12 @@ function Main(props) {
         <div className="Main">
             <Header/>         
             <VideoMain/>      
-            <div style={{height: "1000px"}}> </div>
-            <Footer />
+            <VideoMain/>   
+            <VideoMain/>   
+    
+            <Footer />  
         </div>
+        
     );
 }
 
