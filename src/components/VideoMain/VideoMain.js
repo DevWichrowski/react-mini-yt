@@ -16,10 +16,12 @@ class VideoMain extends Component {
 
 		if (loading) {
 			return (
-			<>
-			<YouTube className="default-video" videoId="6pgYcMk5_9o" opts={playerSettings} />
-			<h2>title</h2>
-			</>
+				<div className="VideoMain">
+					<div className="video-details">
+						<YouTube className="main-video" videoId="6pgYcMk5_9o" opts={playerSettings} />
+						<h3 className="video-title">Mini-YT</h3>
+					</div>
+				</div>
 			);
 		}
 		if (!loading) {
@@ -32,14 +34,14 @@ class VideoMain extends Component {
 							{videosArr.map((item, index) => {
 								if (index === 0) {
 									return (
-										<>
-										<YouTube
-											className="main-video"
-											videoId={item.id.videoId}
-											opts={playerSettings}
-										/>
-										<h3 className="video-title">{item.snippet.title}</h3>
-										</>
+										<div>
+											<YouTube
+												className="main-video"
+												videoId={item.id.videoId}
+												opts={playerSettings}
+											/>
+											<h3 className="video-title">{item.snippet.title}</h3>
+										</div>
 									);
 								}
 							})}
