@@ -10,10 +10,7 @@ function Main(props) {
     return (
         <div className="Main">
             <Header/>         
-            <VideoMain/>      
-            <VideoMain/>   
-            <VideoMain/>   
-    
+            <VideoMain/>          
             <Footer />  
         </div>
         
