@@ -1,63 +1,71 @@
 import './Header.scss'
-import React from 'react';
-import { Button, Grid, Row, Col, Navbar} from 'react-bootstrap'
+import React, { Component } from 'react';
+import { Button, Grid, Row, Col, Navbar } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import ytlogo from '../../assets/ytLogo.jpg'
 import { connect } from 'react-redux'
+import { getVideos, saveMoveTitle } from '../../store/actions/searchVideoAction'
 
 
-class Header extends React.Component {
+class Header extends Component {
     constructor(props) {
         super(props)
 
-        this.setState = {
+        this.state = {
             value: ''
         }
     }
-
-    handleChange(e) {
-        this.setState({
-            value: e.target.value
-        })
-   /*     this.props.searchByChar(
-            this.state.value
-        ) */
+    saveTitleInState = (e) => {
+        this.setState({ value: e.target.value });
     }
+
+
     render() {
 
         return (
             <div className="Container">
-                <Navbar fixedTop={true} >  
-                        <Grid>
-                            <Row>
-                                <Col xs={2} sm={2} md={2} lg={2} >
-                                    <img src={ytlogo} alt="YouTube" className="img" />
-                                </Col>
-                                <Col xs={8} sm= {2} md={8} lg={8} >
-                                    <input
-                                        onChange={this.handleChange}
-                                        /*    onChange={this.props.searchByChar(
-                                                this.state.value
-                                            )} */ // Ale to chyba było by zbyt piękne xD bo wali errorem że value jest null na początku
-                                        className="input"
-                                        placeholder="Szukaj..."
-                                    />
-                                    <Button className="Button"> <FontAwesomeIcon icon={faSearch} /> </Button>
-                                </Col>
-                            </Row>
-                        </Grid>   
+                <Navbar fixedTop={true} >
+                    <Grid>
+                        <Row>
+                            <Col xs={2} sm={2} md={2} lg={2} >
+                                <img src={ytlogo} alt="YouTube" className="img" />
+                            </Col>
+                            <Col xs={8} sm={8} md={8} lg={8} >
+                                <input
+                                    onChange={this.saveTitleInState}
+                                    className="input"
+                                    placeholder="Szukaj..."
+                                    onKeyPress={event => {
+                                        if (event.key === 'Enter') {
+                                            this.props.saveTitleToStore(this.state.value)
+                                        }
+                                        if (event.key === 'Enter') {
+                                            this.props.searchMovie(this.state.value)
+                                        }
+                                    }
+                                    }
+                                />
+                                <Button className="Button"
+                                    onClick={() => {
+                                        this.props.saveTitleToStore(this.state.value)
+                                        this.props.searchMovie(this.state.value)
+                                    }}> <FontAwesomeIcon icon={faSearch} /> </Button>
+                            </Col>
+                        </Row>
+                    </Grid>
 
-                       
+
                 </Navbar>
             </div>
-            
+
         );
     }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    searchByChar: (payload) => dispatch(/*Reducer*/(payload)),
+    saveTitleToStore: (payload) => dispatch(saveMoveTitle(payload)),
+    searchMovie: (payload) => dispatch(getVideos(payload)),
 
 });
 
