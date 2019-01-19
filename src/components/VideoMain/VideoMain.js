@@ -15,11 +15,7 @@ class VideoMain extends Component {
 		const loading = this.props.videosData.loading;
 
 		if (loading) {
-			return (
-				<div>
-					<h2>Please enter video title...</h2>
-				</div>
-			);
+			return <YouTube className="default-video" videoId="6pgYcMk5_9o" opts={playerSettings} />;
 		}
 		if (!loading) {
 			const videosArr = this.props.videosData.videos.items;
@@ -29,9 +25,13 @@ class VideoMain extends Component {
 						<div className="video-details">
 							{console.log(this.props.videosData.videos.items)}
 							{videosArr.map((item, index) => {
-								if(index === 0){
-									return(
-										<YouTube className="main-video" videoId={item.id.videoId} opts={playerSettings} />
+								if (index === 0) {
+									return (
+										<YouTube
+											className="main-video"
+											videoId={item.id.videoId}
+											opts={playerSettings}
+										/>
 									);
 								}
 							})}
