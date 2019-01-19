@@ -8,8 +8,7 @@ import Header from '../Header/Header'
 function Main(props) {
     return (
         <div className="Main">
-            <Header/>
-            <h1>Main component</h1>            
+            <Header/>         
             <VideoMain/>      
         </div>
     );

@@ -18,7 +18,6 @@ class VideoMain extends Component {
 
         return (
             <div className="VideoMain">
-                VideoMain
                 <div className="video-details">
                     <YouTube className="main-video" videoId="eHBws27NXqI" opts={playerSettings}/>
                     <h2></h2>
