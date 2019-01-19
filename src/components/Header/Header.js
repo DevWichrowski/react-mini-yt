@@ -20,6 +20,9 @@ class Header extends React.Component {
         this.setState({
             value: e.target.value
         })
+   /*     this.props.searchByChar(
+            this.state.value
+        ) */
     }
     render() {
 
