@@ -1,37 +1,56 @@
 import './Header.scss'
 import React from 'react';
-import { Button, Navbar, NavItem,Nav } from 'react-bootstrap'
+import { Button, Grid, Row, Col } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import ytlogo from '../../assets/ytLogo.jpg'
+import {connect } from 'react-redux'
 
 
 class Header extends React.Component {
+    constructor(props){
+        super(props)
+
+        this.setState = {
+            value: ''
+        }
+    }
+
+    handleChange(e) {
+        this.setState({
+            value: e.target.value
+        })
+    }
     render() {
-        const { classes } = this.props;
+     
         return (
-            <Navbar collapseOnSelect className="NavBar">
-                <Navbar.Collapse>
-                <Nav>
-                    <NavItem>
-                    <img src={ytlogo} alt="YouTube" />
-                    </NavItem>
-                </Nav>
-                    <Nav>
-                        <NavItem > <input className="input"
-                            placeholder="Szukaj..."
-                        />  
-                        </NavItem>
-                    </Nav>
-                    <Nav>
-                        <NavItem>
-                        <Button className="Button"> <FontAwesomeIcon icon={faSearch} /> </Button>
-                        </NavItem>
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+            <div className="Container">
+                <Grid>
+                    <Row>
+                        <Col xs="2" md="2" lg="2" >
+                            <img src={ytlogo} alt="YouTube" className="img" />
+                        </Col>
+                        <Col xs="8" md="8" lg="8" >
+                            <input 
+                                 onChange={this.handleChange}
+                             /*    onChange={this.props.searchByChar(
+                                     this.state.value
+                                 )} */ // Ale to chyba było by zbyt piękne xD bo wali errorem że value jest null na początku
+                                 className="input"
+                                placeholder="Szukaj..."
+                            />
+                            <Button className="Button"> <FontAwesomeIcon icon={faSearch} /> </Button>
+                        </Col>
+                    </Row>
+                </Grid>
+            </div>
         );
     }
 }
 
-export default Header
+const mapDispatchToProps = (dispatch) => ({
+    searchByChar: (payload) => dispatch(/*Reducer*/(payload)),
+
+});
+
+export default connect(null, mapDispatchToProps)(Header) 
