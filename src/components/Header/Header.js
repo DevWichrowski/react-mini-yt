@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import logo from '../../assets/logo.png'
 import { connect } from 'react-redux'
-import { getVideos, saveMoveTitle } from '../../store/actions/searchVideoAction'
+import { getVideos, saveVideoTitle } from '../../store/actions/searchVideoAction'
 
 
 class Header extends React.Component {ł
@@ -37,18 +37,18 @@ class Header extends React.Component {ł
                                         placeholder="Szukaj..."
                                         onKeyPress={event => {
                                             if (event.key === 'Enter') {
-                                                this.props.saveTitleToStore(this.state.value)
+                                                this.props.saveVideoToStore(this.state.value)
                                             }
                                             if (event.key === 'Enter') {
-                                                this.props.searchMovie(this.state.value)
+                                                this.props.searchVideo(this.state.value)
                                             }
                                         }
                                         }
                                     />
                                     <Button className="Button"
                                     onClick={() => {
-                                        this.props.saveTitleToStore(this.state.value)
-                                        this.props.searchMovie(this.state.value)
+                                        this.props.saveVideoToStore(this.state.value)
+                                        this.props.searchVideo(this.state.value)
                                     }}> <FontAwesomeIcon icon={faSearch} /> </Button>
                                 </div>
                             </div>
@@ -63,8 +63,8 @@ class Header extends React.Component {ł
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    saveTitleToStore: (payload) => dispatch(saveMoveTitle(payload)),
-    searchMovie: (payload) => dispatch(getVideos(payload)),
+    saveVideoToStore: (payload) => dispatch(saveVideoTitle(payload)),
+    searchVideo: (payload) => dispatch(getVideos(payload)),
 
 });
 

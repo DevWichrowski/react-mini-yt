@@ -3,15 +3,15 @@ import * as SearchVideoAction from '../actions/searchVideoAction';
 const initialState = {
     username: 'test',
     videos: [],
-    moveTitle: null,
+    videoTitle: null,
     loading: false,
     error: null
 };
 
 export function searchVideoReducer(state = initialState, action) {
     switch (action.type) {
-        case SearchVideoAction.SAVE_TITLE: {
-            return { ...state, loading: false, error: null, moveTitle: action.payload }
+        case SearchVideoAction.SAVE_VIDEO_TITLE: {
+            return { ...state, loading: false, error: null, videoTitle: action.payload }
         }
         case SearchVideoAction.FETCH_REQUEST: {
             return { ...state, loading: true, error: null }
