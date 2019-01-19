@@ -1,20 +1,18 @@
 import React from 'react';
 import './Main.scss';
-import VideoMain from "../VideoMain/VideoMain";
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
-
+import VideoMain from '../VideoMain/VideoMain';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 // Tutaj beda znajdowały sie wszystko komponenty z nawigacja, App bedzie tylko wrapował Main
 function Main(props) {
-    return (
-        <div className="Main">
-            <Header/>         
-            <VideoMain/>          
-            <Footer />  
-        </div>
-        
-    );
+	return (
+		<div className="Main">
+			<Header />
+			<VideoMain />
+			<Footer />
+		</div>
+	);
 }
 
 export default Main;

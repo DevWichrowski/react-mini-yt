@@ -1,26 +1,25 @@
 .VideoMain {
   width: 100%;
-
+  color: rgb(211, 206, 206);
+  
   .video-details {
-    text-align: center;
-
     .main-video {
       display: block;
       margin: 0 auto;
-      width: 100%;
+      width: 80%;
       height: 500px;
     }
-  }
-}
 
-h2 {
-  text-align: center;
-  margin-top: 10%;
+    .video-title {
+      margin-left: 10%;
+    }
+
+  }
 }
 
 .default-video {
   display: block;
   margin: 0 auto;
-  width: 100%;
-  min-height: 600px;
+  width: 80%;
+  min-height: 500px;
 }
