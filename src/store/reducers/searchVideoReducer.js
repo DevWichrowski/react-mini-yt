@@ -4,7 +4,7 @@ const initialState = {
     username: 'test',
     videos: [],
     videoTitle: null,
-    loading: false,
+    loading: true,
     error: null
 };
 
