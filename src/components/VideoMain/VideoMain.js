@@ -6,6 +6,17 @@ import YouTube from 'react-youtube';
 import Well from "react-bootstrap/es/Well";
 
 class VideoMain extends Component {
+	constructor() {
+        super()
+        this.state = {
+           description: false
+        }
+	}
+	
+	showDescription = () => {
+		this.setState({description: !this.state.description});
+	}
+
 	render() {
 		const playerSettings = {
 			playerVars: {
@@ -41,8 +52,8 @@ class VideoMain extends Component {
 												opts={playerSettings}
 											/>
 											<div className="video-details">
-											<h3 className="video-title">{item.snippet.title}</h3>
-											<p>{item.snippet.description}</p>
+											<h3 className="video-title" onClick={() => {this.showDescription()}}>{item.snippet.title}</h3>
+											{this.state.description === true ? <p>{item.snippet.description}</p> : null}
 											</div>
 										</div>
 									);
