@@ -45,11 +45,11 @@ class Header extends React.Component {
                                         }
                                         }
                                     />
-                                    <Button className="Button"
+                                    <button className="search-button"
                                     onClick={() => {
                                         this.props.saveVideoToStore(this.state.value)
                                         this.props.searchVideo(this.state.value)
-                                    }}> <FontAwesomeIcon icon={faSearch} /> </Button>
+                                    }}> <FontAwesomeIcon icon={faSearch} /> </button>
                                 </div>
                             </div>
                         </div>   
