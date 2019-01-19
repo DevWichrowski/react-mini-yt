@@ -3,12 +3,16 @@ import React, { Component } from 'react';
 import { Button, Grid, Row, Col, Navbar } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import ytlogo from '../../assets/ytLogo.jpg'
+import logo from '../../assets/logo.png'
 import { connect } from 'react-redux'
 import { getVideos, saveMoveTitle } from '../../store/actions/searchVideoAction'
 
 
+<<<<<<< HEAD
 class Header extends Component {
+=======
+class Header extends React.Component {ł
+>>>>>>> dorota
     constructor(props) {
         super(props)
 
@@ -25,6 +29,7 @@ class Header extends Component {
 
         return (
             <div className="Container">
+<<<<<<< HEAD
                 <Navbar fixedTop={true} >
                     <Grid>
                         <Row>
@@ -57,6 +62,30 @@ class Header extends Component {
 
 
                 </Navbar>
+=======
+                <div fixedTop={true} >  
+                        <div>
+                            <div className="header-body">
+                                <div className="header-logo">
+                                    <img src={logo} alt="YouTube" className="img" />
+                                </div>
+                                <div className="header-input">
+                                    <input
+                                        onChange={this.handleChange}
+                                        /*    onChange={this.props.searchByChar(
+                                                this.state.value
+                                            )} */ // Ale to chyba było by zbyt piękne xD bo wali errorem że value jest null na początku
+                                        className="input"
+                                        placeholder="Szukaj..."
+                                    />
+                                    <Button className="Button"> <FontAwesomeIcon icon={faSearch} /> </Button>
+                                </div>
+                            </div>
+                        </div>   
+
+                       
+                </div>
+>>>>>>> dorota
             </div>
 
         );
