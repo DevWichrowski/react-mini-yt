@@ -13,7 +13,7 @@ class Header extends React.Component {ł
         super(props)
 
         this.state = {
-            value: ''
+            value: '',
         }
     }
     saveTitleInState = (e) => {
