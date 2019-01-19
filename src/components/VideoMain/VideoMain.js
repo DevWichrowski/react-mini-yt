@@ -6,7 +6,7 @@ import YouTube from 'react-youtube';
 
 class VideoMain extends Component {
     componentDidMount() {
-        this.props.getVideos('Tibia');
+        this.props.getVideos('Tibiaa');
     }
 
     render() {
