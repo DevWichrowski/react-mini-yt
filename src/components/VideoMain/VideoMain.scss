@@ -1,12 +1,14 @@
 .VideoMain {
   width: 100%;
 
-
-  .video-details{
+  .video-details {
     text-align: center;
+
     .main-video {
       display: block;
       margin: 0 auto;
+      width: 80%;
+      height: 500px;
     }
   }
 
