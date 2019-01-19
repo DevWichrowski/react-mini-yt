@@ -1,0 +1,19 @@
+.small {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    background-color: rgba($color: #ffffff, $alpha: 0.2);
+    height: 50px;
+    -webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s;
+}
+
+.big {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    background-color: rgba($color: #ffffff, $alpha: 0.2);
+    height: 100px;
+    -webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 1s;
+}

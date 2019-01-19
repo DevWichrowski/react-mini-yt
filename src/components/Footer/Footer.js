@@ -2,26 +2,32 @@ import React, { Component } from 'react'
 import './Footer.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { Grid, Row, Col } from 'react-bootstrap'
+import { Grid, Row, Col, Button } from 'react-bootstrap'
 import StickyFooter from 'react-sticky-footer';
 
+class Footer extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+           clicked: false,
+           style: 'small'
+        }
+    }
 
-
-class Footer extends Component {
+    getStyle = () => {
+        if (!this.state.clicked) {
+            this.setState({ style: 'big', clicked: true });
+        } else {
+            this.setState({ style: 'small', clicked: false });
+        }
+    }
 
     render() {
         return (
-            <div className="footer">
-                <StickyFooter bottomThreshold={50000}
-                    normalStyles={{
-                        backgroundColor: "#999999",
-                        padding: "2rem"
-                    }}
-                    stickyStyles={{
-                        backgroundColor: "rgba(255,255,255,.8)",
-                        padding: "2rem"
-                    }}
-                >
+            <div className={this.state.style}  onClick={() => {
+                this.getStyle()
+            }}>
+                {/* <StickyFooter bottomThreshold={50000}>
                 <Grid>
                     <Row>
                         <Col xs={6} sm={6} md={6} lg={6}>
@@ -44,10 +50,10 @@ class Footer extends Component {
                         </Col>
                     </Row>
                 </Grid>
-                </StickyFooter>
+                </StickyFooter> */}
             </div>
         )
-    }
+            }
 }
 
-export default (Footer)
+export default Footer;
