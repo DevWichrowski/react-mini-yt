@@ -12,7 +12,7 @@ class VideoMain extends Component {
     render() {
         const playerSettings = {
             playerVars: {
-                autoplay: 1
+                autoplay: 0
             }
         };
 
