@@ -3,6 +3,7 @@ import './VideoMain.scss';
 import { getVideos } from '../../store/actions/searchVideoAction';
 import connect from 'react-redux/es/connect/connect';
 import YouTube from 'react-youtube';
+import Well from "react-bootstrap/es/Well";
 
 class VideoMain extends Component {
 	render() {
@@ -29,24 +30,25 @@ class VideoMain extends Component {
 			if (videosArr !== undefined) {
 				return (
 					<div className="VideoMain">
-						<div className="video-details">
 							{console.log(this.props.videosData.videos.items)}
 							{videosArr.map((item, index) => {
 								if (index === 0) {
 									return (
-										<div>
+										<div key={index}>
 											<YouTube
 												className="main-video"
 												videoId={item.id.videoId}
 												opts={playerSettings}
 											/>
+											<div className="video-details">
 											<h3 className="video-title">{item.snippet.title}</h3>
+											<p>{item.snippet.description}</p>
+											</div>
 										</div>
 									);
 								}
 							})}
 						</div>
-					</div>
 				);
 			} else {
 				return (

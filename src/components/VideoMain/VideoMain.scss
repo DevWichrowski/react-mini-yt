@@ -1,21 +1,17 @@
 .VideoMain {
   width: 100%;
   color: rgb(211, 206, 206);
-  
-  .video-details {
+
     .main-video {
       display: block;
       margin: 0 auto;
       width: 80%;
       height: 500px;
     }
-
-    .video-title {
+    .video-details{
       margin-left: 10%;
     }
-
   }
-}
 
 .default-video {
   display: block;
