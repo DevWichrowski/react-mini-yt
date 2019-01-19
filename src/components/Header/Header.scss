@@ -1,48 +1,49 @@
-.Container {
-    padding-top: 10px;
-    width: 100%;
-    padding-bottom: 1.5%
-}
-.input{
-    margin-left: 7.5%;
-    font-size: 185%;
-    width: 85%;
-    margin-top: 1%;
+.header-body {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba($color: #ffffff, $alpha: 0.3);
+    padding: 10px;
+    -webkit-box-shadow: 0px 3px 35px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 3px 35px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 3px 35px 0px rgba(0,0,0,0.75);
+
+    .header-logo {
+        width: 25%;
+        margin-right: 20px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .header-input {
+        width: 75%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 20px;
+
+        input {
+            width: 90%;
+            padding: 10px;
+            height: 70%;
+            background-color: #1E1E1E;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            color: white;
+            margin-right: 20px;
+        }
+    }
 }
 
-@media only screen and (max-width: 600px) {
-    .Button {
-        margin-left: -9.9%;
-        margin-top: -2.5%;
+
+@media screen and (max-width: 1000px) {
+    input {
+        height: 100% !important;
     }
-    }
-    @media only screen and (min-width: 600px) {
-        .Button {
-            margin-left: -8.5%;
-            margin-top: -1.959%;
-        }
-        }
-        @media only screen and (min-width: 768px) {
-            .Button {
-                margin-left: -8.35%;
-                margin-top: -1.98%;
-            }
-            }
-            @media only screen and (min-width: 992px) {
-                .Button {
-                    margin-left: -6.4%;
-                    margin-top: -1.509%;
-                }
-                }
-                @media only screen and (min-width: 1200px) {
-                    .Button {
-                        margin-left: -5.2%;
-                        margin-top: -1.3%;
-                    }
- }
- @media only screen and (min-width: 1200px) {
-    .img {
-        margin-left: -150.2%;
-        margin-top: 6%;
+
+    img {
+        margin-top: 5px;
     }
 }

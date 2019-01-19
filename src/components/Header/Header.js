@@ -3,11 +3,11 @@ import React from 'react';
 import { Button, Grid, Row, Col, Navbar} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import ytlogo from '../../assets/ytLogo.jpg'
+import logo from '../../assets/logo.png'
 import { connect } from 'react-redux'
 
 
-class Header extends React.Component {
+class Header extends React.Component {ł
     constructor(props) {
         super(props)
 
@@ -28,13 +28,13 @@ class Header extends React.Component {
 
         return (
             <div className="Container">
-                <Navbar fixedTop={true} >  
-                        <Grid>
-                            <Row>
-                                <Col xs={2} sm={2} md={2} lg={2} >
-                                    <img src={ytlogo} alt="YouTube" className="img" />
-                                </Col>
-                                <Col xs={8} sm= {2} md={8} lg={8} >
+                <div fixedTop={true} >  
+                        <div>
+                            <div className="header-body">
+                                <div className="header-logo">
+                                    <img src={logo} alt="YouTube" className="img" />
+                                </div>
+                                <div className="header-input">
                                     <input
                                         onChange={this.handleChange}
                                         /*    onChange={this.props.searchByChar(
@@ -44,12 +44,12 @@ class Header extends React.Component {
                                         placeholder="Szukaj..."
                                     />
                                     <Button className="Button"> <FontAwesomeIcon icon={faSearch} /> </Button>
-                                </Col>
-                            </Row>
-                        </Grid>   
+                                </div>
+                            </div>
+                        </div>   
 
                        
-                </Navbar>
+                </div>
             </div>
             
         );
