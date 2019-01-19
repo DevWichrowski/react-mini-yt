@@ -5,10 +5,6 @@ import connect from 'react-redux/es/connect/connect';
 import YouTube from 'react-youtube';
 
 class VideoMain extends Component {
-	componentDidMount() {
-		// this.props.getVideos('Tibiaa');
-	}
-
 	render() {
 		const playerSettings = {
 			playerVars: {
@@ -25,13 +21,31 @@ class VideoMain extends Component {
 				</div>
 			);
 		}
-		return (
-			<div className="VideoMain">
-				<div className="video-details">
-					<YouTube className="main-video" videoId="eHBws27NXqI" opts={playerSettings} />
-				</div>
-			</div>
-		);
+		if (!loading) {
+			const videosArr = this.props.videosData.videos.items;
+			if (videosArr !== undefined) {
+				return (
+					<div className="VideoMain">
+						<div className="video-details">
+							{console.log(this.props.videosData.videos.items)}
+							{videosArr.map((item, index) => {
+								if(index === 0){
+									return(
+										<YouTube className="main-video" videoId={item.id.videoId} opts={playerSettings} />
+									);
+								}
+							})}
+						</div>
+					</div>
+				);
+			} else {
+				return (
+					<div>
+						<h2>Loading...</h2>
+					</div>
+				);
+			}
+		}
 	}
 }
 

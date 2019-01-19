@@ -11,7 +11,7 @@ function Main(props) {
         <div className="Main">
             <Header/>         
             <VideoMain/>          
-            {/* <Footer />   */}
+            <Footer />  
         </div>
         
     );
