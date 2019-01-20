@@ -5,7 +5,7 @@ class ThumbnailContainer extends Component {
     render() {
         return (
             <div className="ThumbnailContainer">
-                <h2>Thumbnail container</h2>
+                <h2>.</h2>
             </div>
         );
     }

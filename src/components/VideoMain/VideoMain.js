@@ -3,7 +3,6 @@ import './VideoMain.scss';
 import { getVideos } from '../../store/actions/searchVideoAction';
 import connect from 'react-redux/es/connect/connect';
 import YouTube from 'react-youtube';
-import Well from 'react-bootstrap/es/Well';
 import VideoInfo from '../VideoInfo/VideoInfo'
 
 class VideoMain extends Component {
@@ -28,7 +27,11 @@ class VideoMain extends Component {
 		const loading = this.props.videosData.loading;
 
 		if (loading) {
-			return <YouTube className="default-video" videoId="6pgYcMk5_9o" opts={playerSettings} />;
+			return (
+				<div className="loading-msg">
+					<h2>Please enter video title</h2>
+				</div>
+			);
 		}
 		if (!loading) {
 			const videosArr = this.props.videosData.videos.items;
