@@ -4,6 +4,7 @@ import { getVideos } from '../../store/actions/searchVideoAction';
 import connect from 'react-redux/es/connect/connect';
 import YouTube from 'react-youtube';
 import Well from 'react-bootstrap/es/Well';
+import VideoInfo from '../VideoInfo/VideoInfo'
 
 class VideoMain extends Component {
 	constructor() {
@@ -55,6 +56,7 @@ class VideoMain extends Component {
 											</h3>
 											{this.state.description === true ? <p>{item.snippet.description}</p> : null}
 										</div>
+										<VideoInfo />
 									</div>
 								);
 							}
