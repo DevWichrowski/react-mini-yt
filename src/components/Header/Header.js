@@ -1,6 +1,5 @@
 import './Header.scss'
-import React, { Component } from 'react';
-import { Button, Grid, Row, Col, Navbar } from 'react-bootstrap'
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import logo from '../../assets/logo.png'
@@ -25,7 +24,7 @@ class Header extends React.Component {
 
         return (
             <div className="Container">
-                <div fixedTop={true} >  
+                <div>  
                         <div>
                             <div className="header-body">
                                 <div className="header-logo">

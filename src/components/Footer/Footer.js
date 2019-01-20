@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Footer.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { Grid, Row, Col, Button } from 'react-bootstrap'
-import StickyFooter from 'react-sticky-footer';
+import {faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faCopyright } from '@fortawesome/free-solid-svg-icons'
 
 class Footer extends React.Component {
@@ -33,7 +31,7 @@ class Footer extends React.Component {
               <div className={this.state.contentSyle} onClick={() => {
                 this.getStyle()
             }}>
-              Made by AnticaTeam, all rights reserved. {new Date().getFullYear()} {this.state.style === 'small' ? <div class="more-info">Click to see more info.</div> : null}
+              Made by AnticaTeam, all rights reserved. {new Date().getFullYear()} {this.state.style === 'small' ? <div className="more-info">Click to see more info.</div> : null}
               </div>
               <div className={this.state.creatorsStyle}>
                 <div className="creator"><FontAwesomeIcon icon={faGithub} /><div className="creator-link"><a href="https://github.com/DevWichrowski">https://github.com/DevWichrowski</a></div></div>
