@@ -17,7 +17,7 @@ class ThumbnailContainer extends Component {
                 return (
                     <div className="ThumbnailContainer">
                         {videosArr.map((video, index) => {
-                            return (<Thumbnail key={index}/>);
+                            return (<Thumbnail key={index} title={video.snippet.title} image={video.snippet.thumbnails.medium.url}/>);
                         })}
                     </div>
                 );

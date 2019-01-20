@@ -3,8 +3,9 @@ import './Thumbnail.scss'
 
 function Thumbnail(props) {
     return (
-        <div>
-            <h3>Thumb</h3>
+        <div className="Thumbnail">
+            <img className="video-thumbnail" src={props.image} />
+            <p>{props.title}</p>
         </div>
     );
 }
