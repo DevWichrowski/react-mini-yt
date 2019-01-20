@@ -1,10 +1,14 @@
 .Thumbnail{
-  margin: 0 auto;
+  margin: 0 10px;
   white-space: normal;
   width: 300px;
 
   .video-thumbnail{
-    width: 300px;
+    width: 100%;
     margin: 0 auto;
+  }
+
+  p {
+    margin-top: 10px;
   }
 }

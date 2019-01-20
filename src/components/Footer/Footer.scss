@@ -1,7 +1,6 @@
 .small {
-    bottom: 0;
-    position: absolute;
     width: 100%;
+    margin-top: 40px;
     background-color: rgba($color: #ffffff, $alpha: 0.2);
     height: 50px;
     -webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
@@ -15,10 +14,9 @@ cursor: pointer;
 }
 
 .big {
-    bottom: 0;
-    position: absolute;
     cursor: pointer;
     width: 100%;
+    margin-top: 40px;
     background-color: rgba($color: #ffffff, $alpha: 0.2);
     height: 100px;
     -webkit-transition: height 1s; /* For Safari 3.1 to 6.0 */
