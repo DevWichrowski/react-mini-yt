@@ -1,12 +1,16 @@
 import * as SearchVideoAction from '../actions/searchVideoAction';
 
+
 const initialState = {
 	username: 'test',
 	videos: [],
+	videosStatistics: [],
 	videoTitle: null,
 	defaultVideo: true,
 	loading: true,
-	error: null
+	error: null,
+	videoId: null,
+
 };
 
 export function searchVideoReducer(state = initialState, action) {
@@ -18,7 +22,11 @@ export function searchVideoReducer(state = initialState, action) {
 			return { ...state, loading: true, defaultVideo: false, error: null };
 		}
 		case SearchVideoAction.FETCH_VIDEOS_SUCCESS: {
-			return { ...state, loading: false, defaultVideo: false, videos: action.payload };
+			return { ...state, loading: false, defaultVideo: false, videos: action.payload, 
+				videoId: action.payload.items[0].id.videoId	};
+		}				
+		case SearchVideoAction.FETCH_VIDEOS_STATISTICS_SUCCESS: {
+			return { ...state, loading: false, defaultVideo: false, videosStatistics: action.payload}
 		}
 		default: {
 			return state;

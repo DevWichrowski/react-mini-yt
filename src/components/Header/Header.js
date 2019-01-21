@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import logo from '../../assets/logo.png'
 import { connect } from 'react-redux'
-import { getVideos, saveVideoTitle } from '../../store/actions/searchVideoAction'
+import { getVideos, saveVideoTitle, getVideosInfo } from '../../store/actions/searchVideoAction'
 
 
 class Header extends React.Component {
@@ -21,7 +21,7 @@ class Header extends React.Component {
 
 
     render() {
-
+        
         return (
             <div className="Container">
                 <div>  
@@ -41,18 +41,21 @@ class Header extends React.Component {
                                             if (event.key === 'Enter') {
                                                 this.props.searchVideo(this.state.value)
                                             }
+                                          /*  if (event.key === 'Enter') {
+                                                this.props.videoInfo(this.props.videosData.videoId)  
+                                            } */
                                         }
                                         }
                                     />
                                     <button className="search-button"
                                     onClick={() => {
                                         this.props.saveVideoToStore(this.state.value)
-                                        this.props.searchVideo(this.state.value)
+                                        this.props.searchVideo(this.state.value)       
+                                       // this.props.videoInfo(this.props.videosData.videoId)                                
                                     }}> <FontAwesomeIcon icon={faSearch} /> </button>
                                 </div>
                             </div>
                         </div>   
-
                        
                 </div>
             </div>
@@ -64,7 +67,12 @@ class Header extends React.Component {
 const mapDispatchToProps = (dispatch) => ({
     saveVideoToStore: (payload) => dispatch(saveVideoTitle(payload)),
     searchVideo: (payload) => dispatch(getVideos(payload)),
+  //  videoInfo: (payload) => dispatch(getVideosInfo(payload)),
 
 });
 
-export default connect(null, mapDispatchToProps)(Header) 
+const mapStateToProps = (state) => ({
+    videosData: state.videosData
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header) 
