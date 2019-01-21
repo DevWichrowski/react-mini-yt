@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
 import logo from '../../assets/logo.png'
 import {connect} from 'react-redux'
-import {getVideos, saveVideoTitle, getVideosInfo} from '../../store/actions/searchVideoAction'
+import {getVideos, saveVideoTitle} from '../../store/actions/searchVideoAction'
 
 
 class Header extends React.Component {

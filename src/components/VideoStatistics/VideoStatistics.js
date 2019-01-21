@@ -1,14 +1,14 @@
 import React from 'react'
-import './VideoInfo.scss';
+import './VideoStatistics.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faThumbsUp, faThumbsDown} from '@fortawesome/free-regular-svg-icons'
 import connect from 'react-redux/es/connect/connect';
 
-class VideoInfo extends React.Component {
+class VideoStatistics extends React.Component {
 
     render() {
         console.log(this.props.videosStatistic, 'no a jak');
-        if(this.props.videosStatistic == null){
+        if (this.props.videosStatistic == null) {
             return null;
         }
         return (
@@ -31,4 +31,4 @@ const mapStateToProps = (state) => ({
 });
 
 
-export default connect(mapStateToProps, null)(VideoInfo)
+export default connect(mapStateToProps, null)(VideoStatistics)

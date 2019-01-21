@@ -3,7 +3,7 @@ import './VideoMain.scss';
 import {getVideos} from '../../store/actions/searchVideoAction';
 import connect from 'react-redux/es/connect/connect';
 import YouTube from 'react-youtube';
-import VideoInfo from '../VideoInfo/VideoInfo'
+import VideoInfo from '../VideoStatistics/VideoStatistics'
 
 class VideoMain extends Component {
     constructor() {
