@@ -4,7 +4,7 @@ import * as SearchVideoAction from '../actions/searchVideoAction';
 const initialState = {
 	username: 'test',
 	videos: [],
-	videosStatistics: [],
+	videosStatistics: null,
 	videoTitle: null,
 	defaultVideo: true,
 	loading: true,

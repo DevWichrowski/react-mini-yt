@@ -1,34 +1,34 @@
 import React from 'react'
 import './VideoInfo.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faThumbsUp, faThumbsDown } from '@fortawesome/free-regular-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faThumbsUp, faThumbsDown} from '@fortawesome/free-regular-svg-icons'
 import connect from 'react-redux/es/connect/connect';
 
-class VideInfo extends React.Component {
+class VideoInfo extends React.Component {
 
     render() {
-        const videosData = videosData.videosStatistics
+        console.log(this.props.videosStatistic, 'no a jak');
+        if(this.props.videosStatistic == null){
+            return null;
+        }
         return (
-            <div>
-                <div className="InfoDisplay">
-                     {videosData.map((item, index) => {
-                      return (
-                    <div key={index}>
-                    <span className="event" > Wyświetlenia: {item.items.statistics.viewCount} </span>
-                    <button className="like"  > <FontAwesomeIcon icon={faThumbsUp} /> {item.items.statistics.likeCount} </button>
-                    <button className="unLike" > <FontAwesomeIcon icon={faThumbsDown} /> {item.items.statistics.dislikeCount} </button>
-                    </div>
-                    )
-                })}
+            <div className="InfoDisplay">
+                <div>
+                        <span
+                            className="event"> Wyświetlenia: {this.props.videosStatistic.items[0].statistics.viewCount} </span>
+                    <button className="like"><FontAwesomeIcon
+                        icon={faThumbsUp}/> {this.props.videosStatistic.items[0].statistics.likeCount}</button>
+                    <button className="unLike"><FontAwesomeIcon
+                        icon={faThumbsDown}/> {this.props.videosStatistic.items[0].statistics.dislikeCount}</button>
                 </div>
-           </div>
-        )
+            </div>
+        );
     }
 }
 
 const mapStateToProps = (state) => ({
-    videosData: state.videosData
+    videosStatistic: state.videosData.videosStatistics
 });
 
 
-export default connect(mapStateToProps,null) (VideInfo)
+export default connect(mapStateToProps, null)(VideoInfo)

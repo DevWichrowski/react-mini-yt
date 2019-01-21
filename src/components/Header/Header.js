@@ -1,10 +1,10 @@
 import './Header.scss'
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faSearch} from '@fortawesome/free-solid-svg-icons'
 import logo from '../../assets/logo.png'
-import { connect } from 'react-redux'
-import { getVideos, saveVideoTitle, getVideosInfo } from '../../store/actions/searchVideoAction'
+import {connect} from 'react-redux'
+import {getVideos, saveVideoTitle, getVideosInfo} from '../../store/actions/searchVideoAction'
 
 
 class Header extends React.Component {
@@ -15,48 +15,43 @@ class Header extends React.Component {
             value: '',
         }
     }
+
     saveTitleInState = (e) => {
-        this.setState({ value: e.target.value });
+        this.setState({value: e.target.value});
     }
 
 
     render() {
-        
+
         return (
             <div className="Container">
-                <div>  
-                        <div>
-                            <div className="header-body">
-                                <div className="header-logo">
-                                    <img src={logo} alt="YouTube" className="img" />
-                                </div>
-                                <div className="header-input">
-                                    <input
-                                        onChange={this.saveTitleInState}
-                                        placeholder="Szukaj..."
-                                        onKeyPress={event => {
-                                            if (event.key === 'Enter') {
-                                                this.props.saveVideoToStore(this.state.value)
-                                            }
-                                            if (event.key === 'Enter') {
-                                                this.props.searchVideo(this.state.value)
-                                            }
-                                          /*  if (event.key === 'Enter') {
-                                                this.props.videoInfo(this.props.videosData.videoId)  
-                                            } */
-                                        }
-                                        }
-                                    />
-                                    <button className="search-button"
-                                    onClick={() => {
-                                        this.props.saveVideoToStore(this.state.value)
-                                        this.props.searchVideo(this.state.value)       
-                                       // this.props.videoInfo(this.props.videosData.videoId)                                
-                                    }}> <FontAwesomeIcon icon={faSearch} /> </button>
-                                </div>
+                <div>
+                    <div>
+                        <div className="header-body">
+                            <div className="header-logo">
+                                <img src={logo} alt="YouTube" className="img"/>
                             </div>
-                        </div>   
-                       
+                            <div className="header-input">
+                                <input
+                                    onChange={this.saveTitleInState}
+                                    placeholder="Szukaj..."
+                                    onKeyPress={event => {
+                                        if (event.key === 'Enter') {
+                                            this.props.saveVideoToStore(this.state.value)
+                                            this.props.searchVideo(this.state.value)
+                                        }
+                                    }
+                                    }
+                                />
+                                <button className="search-button"
+                                        onClick={() => {
+                                            this.props.saveVideoToStore(this.state.value);
+                                            this.props.searchVideo(this.state.value);
+                                        }}><FontAwesomeIcon icon={faSearch}/></button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -67,12 +62,10 @@ class Header extends React.Component {
 const mapDispatchToProps = (dispatch) => ({
     saveVideoToStore: (payload) => dispatch(saveVideoTitle(payload)),
     searchVideo: (payload) => dispatch(getVideos(payload)),
-  //  videoInfo: (payload) => dispatch(getVideosInfo(payload)),
-
 });
 
 const mapStateToProps = (state) => ({
-    videosData: state.videosData
+    videosData: state.videosData,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header) 
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
