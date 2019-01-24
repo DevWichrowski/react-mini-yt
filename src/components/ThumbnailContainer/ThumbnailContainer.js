@@ -24,6 +24,7 @@ class ThumbnailContainer extends Component {
             } else {
                 return null;
             }
+
         }
     }
 }
