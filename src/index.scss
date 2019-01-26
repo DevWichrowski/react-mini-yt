@@ -1,7 +1,12 @@
 @import "~normalize.css/normalize.css";
 
-html body {
-    background-color: #1E1E1E;
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  background-color: #1E1E1E;
 }
 
 * {
